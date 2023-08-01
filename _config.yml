@@ -1,0 +1,8 @@
+# _config.yml
+defaults:
+  # CORS configuration
+  - scope:
+      path: ""
+    values:
+      headers:
+        "Access-Control-Allow-Origin": "https://sz-games.github.io"
