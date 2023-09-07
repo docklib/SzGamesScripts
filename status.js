@@ -1,5 +1,5 @@
-var status = 'error'
+var status = 'online'
 var problem = true
 var issueName = 'Games May Load Slow'
-var statustxt = 'We are working to fix this issue.'
-var statusTime = 'Last Updated: 8AM PST'
+var statustxt = 'This issue was Fixed.'
+var statusTime = 'Last Updated: 10AM PST'
