@@ -1,0 +1,253 @@
+<html>
+    <head>
+        <title></title>
+        <style>
+            body {
+                font-family: Arial, Helvetica, sans-serif;
+                color: black;
+                margin: 0;
+            }
+
+           .login {
+                width: 100%;
+                height: 100%;
+                position: fixed;
+                background-color: white;
+                transition: 0.5s;
+           }
+
+           .dash {
+                width: 100%;
+                height: 100%;
+                position: fixed;
+                background-color: white;
+                transition: 0.5s;
+                display: none;
+           }
+
+           .lo {
+                width: 100%;
+                height: 100%;
+                position: fixed;
+                display: none;
+                background-color: white;
+                transition: 0.5s;
+           }
+
+
+           .in {
+                height: 45px;
+                border: solid rgb(73, 73, 73) 2px;
+                border-radius: 15px;
+
+           }
+
+           .in::placeholder {
+            text-align: center;
+            color: gray;
+           }
+           .in:focus {
+            border: solid rgb(27, 27, 27) 2px;
+
+            outline: none;
+           }
+
+           .logb {
+                width: 120px;
+                height: 40px;
+                background-color: rgb(36, 36, 36);
+                border: none;
+                position: relative;
+                color: white;
+                left: 50%;
+                cursor: pointer;
+                border-radius: 25px;
+                top: 10px;
+                transform: translate(-50%, 0%);
+           }
+
+           .qb {
+                width: 210px;
+                height: 90px;
+                background-color: rgb(36, 36, 36);
+                border: none;
+                position: relative;
+                color: white;
+                
+                cursor: pointer;
+                border-radius: 25px;
+                left: 15px;
+                top: 0px;
+                float: left;
+                
+                transform: scale(0.8);
+               
+           }
+
+           .qbb {
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -120%);
+            position: absolute;
+            width: 100%;
+            text-align: center;
+           }
+
+           svg {
+            left: 50%; top: 50%;
+            transform:  translate(-50%, -50%);
+            position: absolute;
+ width: 3.25em;
+ transform-origin: center;
+ animation: rotate4 2s linear infinite;
+}
+
+circle {
+ fill: none;
+ stroke: hsl(0, 0%, 8%);
+ stroke-width: 4;
+ stroke-dasharray: 1, 200;
+ stroke-dashoffset: 0;
+
+ stroke-linecap: round;
+ animation: dash4 1.5s ease-in-out infinite;
+}
+
+@keyframes rotate4 {
+ 100% {
+  transform: rotate(360deg) translate(-50%, -50%);
+ }
+}
+
+@keyframes dash4 {
+ 0% {
+  stroke-dasharray: 1, 200;
+  stroke-dashoffset: 0;
+ }
+
+ 50% {
+  stroke-dasharray: 90, 200;
+  stroke-dashoffset: -35px;
+ }
+
+ 100% {
+  stroke-dashoffset: -125px;
+ }
+}
+
+        </style>
+    </head>
+    <body>
+        <script></script>
+        <div id="login" class="login">
+
+            <div style="width: 350px; height: 220px; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);  border-radius: 15px;  box-shadow: black 0px 0px 8px;">
+                <h3 style="text-align: center;">Login</h3>
+                <input id="user" placeholder="User" class="in" style="width: 90%; left: 50%; transform: translateX(-50%); position: relative;">
+                
+                <input id="pass" placeholder="Password" class="in" style="margin-top: 5px; width: 90%; left: 50%; transform: translateX(-50%); position: relative;">
+
+                <button class="logb" onclick="login()">
+                    Login
+                </button>
+
+                <script>
+                    function login() {
+                        if(document.getElementById('user').value === "Evan" && document.getElementById('pass').value == "09725") {
+                            document.getElementById('login').style.display = 'none'
+                            document.getElementById('lo').style.display = 'block'
+                            setTimeout(() => {
+                                document.getElementById('lo').style.display = 'none'
+                                document.getElementById('Dash').style.display = 'block'
+                            }, 1500);
+                        } else {
+                            alert('incorrect login')
+                        }
+                    }
+                </script>
+            </div>
+        </div>
+        
+        <div id="lo" class="lo">
+            <svg viewBox="25 25 50 50">
+                <circle r="20" cy="50" cx="50"></circle>
+              </svg>
+        </div>
+
+        <div id="Dash" class="dash">
+            <div style="width: 100%; height: 85%; bottom: 0; z-index: 100;  position: fixed; background-color: rgba(17, 17, 17, 0.5);">
+                <h1 style="color: white; font-size: 22px; transform: translate(-50%, -50%); top: 50%; left: 50%; position: absolute;">Awaiting Permissions...</h1>
+            
+            </div>
+            <h1 style="margin-top: 50px; margin-left: 18px;">Dashboard (Basic)</h1>
+
+            <div style="right: 80px; top: 53px; position: absolute;">
+                <p>Server: OK</p>
+                <div style="width: 25px; transform: scale(0.8); height: 25px; right: -30px; top: 12px; position: absolute; background-color: greenyellow; border-radius: 50%;">
+
+                </div>
+            </div>
+            <div style="left: 50%; position: relative; transform: translateX(-50%); top: -10px; width: 96%; height: 1px; background-color: gray;"></div>
+           
+            
+
+            <div id="selec" style="">
+                <div class="qb" id="m2">
+                    <p class="qbb">Change DNS Settings</p>
+               </div>
+
+               <div class="qb" id="m2">
+                <p class="qbb">Activate Offline Mode</p>
+           </div>
+
+           <div class="qb" id="m2">
+            <p class="qbb">Disable Offline Mode</p>
+       </div>
+
+       <div class="qb" id="m2">
+        <p class="qbb">Server Health</p>
+   </div>
+
+           <div class="qb" id="m2">
+            <p class="qbb">Blacklist IP</p>
+
+       </div>
+
+       <div class="qb" id="m2">
+        <p class="qbb">Whitelist IP</p>
+   </div>
+
+   <div class="qb" id="m2">
+    <p class="qbb">Grant Permissions</p>
+</div>
+
+<div class="qb" id="m2">
+    <p class="qbb">Site Edit</p>
+</div>
+
+<div class="qb" id="m2">
+    <p class="qbb">Open Alert Menu</p>
+</div>
+
+<div class="qb" id="m2" onclick="window.open('https://szgamesstatus.statuspage.io/')">
+    <p class="qbb">Site Status Page Beta</p>
+</div>
+
+<div class="qb" id="m2">
+    <p class="qbb">Update</p>
+</div>
+
+<div class="qb" id="m2">
+    <p class="qbb">Restrict Site Access</p>
+</div>
+
+<div class="qb" id="m2">
+    <p class="qbb">Site Shutdown</p>
+</div>
+
+            </div>
+
+            <p style="position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%);">Logged In As: Evan | Current Permission Level: (Pending)</p>
+        </div>
+    </body>
+</html>
