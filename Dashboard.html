@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
     <head>
         <title></title>
@@ -89,6 +90,7 @@
             top: 50%;
             transform: translate(-50%, -120%);
             position: absolute;
+            
             width: 100%;
             text-align: center;
            }
@@ -135,39 +137,32 @@ circle {
  }
 }
 
+.MenuDA {
+    width: 80%;
+    height: 65%;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: black 0px 0px 8px;
+    border-radius: 15px;
+    z-index: 200;
+    background-color: whitesmoke;
+}
+.pagem {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: none;
+}
+
+
         </style>
     </head>
     <body>
         <script></script>
-        <div id="login" class="login">
 
-            <div style="width: 350px; height: 220px; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);  border-radius: 15px;  box-shadow: black 0px 0px 8px;">
-                <h3 style="text-align: center;">Login</h3>
-                <input id="user" placeholder="User" class="in" style="width: 90%; left: 50%; transform: translateX(-50%); position: relative;">
-                
-                <input id="pass" placeholder="Password" class="in" style="margin-top: 5px; width: 90%; left: 50%; transform: translateX(-50%); position: relative;">
-
-                <button class="logb" onclick="login()">
-                    Login
-                </button>
-
-                <script>
-                    function login() {
-                        if(document.getElementById('user').value === "Evan" && document.getElementById('pass').value == "09725") {
-                            document.getElementById('login').style.display = 'none'
-                            document.getElementById('lo').style.display = 'block'
-                            setTimeout(() => {
-                                document.getElementById('lo').style.display = 'none'
-                                document.getElementById('Dash').style.display = 'block'
-                            }, 1500);
-                        } else {
-                            alert('incorrect login')
-                        }
-                    }
-                </script>
-            </div>
-        </div>
-        
+  
         <div id="lo" class="lo">
             <svg viewBox="25 25 50 50">
                 <circle r="20" cy="50" cx="50"></circle>
@@ -175,7 +170,50 @@ circle {
         </div>
 
         <div id="Dash" class="dash">
-            <div style="width: 100%; height: 85%; bottom: 0; z-index: 100;  position: fixed; background-color: rgba(17, 17, 17, 0.5);">
+            <div style="display: none; width: 100%; height: 100% ;z-index: 200; position: fixed; background-color: rgba(0, 0, 0, 0.452);" id="menuDAA">
+                <div id="menuDA" class="MenuDA">
+                    <p id="closem" onclick="closem()" style="cursor: pointer; z-index: 50; position: absolute; right: 30px; font-size: 22px; top: 0px; position: absolute;">x</p>
+                    <script>
+                        function closem() {
+                            document.getElementById('menuDAA').style.display = 'none'
+                        }
+
+                    </script>
+                    <div class="pagem" id="IN">
+                        <h1 style="top: 50%; width: 100%; text-align: center; left: 50%; transform: translate(-50%, -50%); position: absolute;">
+                            Insufficient Permissions!
+                        </h1>
+                    </div>
+
+                    <div class="pagem" style="" id="aoff">
+                        <p style="top: 50%; width: 100%; font-size: 22px; text-align: center; left: 50%; transform: translate(-50%, -50%); position: absolute;">
+                            Changes Have Been Requested!
+                        </p>
+                    </div>
+
+                    <div class="pagem" style="" id="aon">
+                        <p style="top: 50%; width: 100%; font-size: 22px; text-align: center; left: 50%; transform: translate(-50%, -50%); position: absolute;">
+                            Changes Have Been Requested!
+                        </p>
+                    </div>
+
+                    <div class="pagem" style="" id="health">
+                        <p style="top: 50%; width: 100%; font-size: 22px; text-align: center; left: 50%; transform: translate(-50%, -50%); position: absolute;">
+                            Health: OK (No Errors)
+                        </p>
+
+                    </div>
+
+                    <div class="pagem" style="" id="Alert">
+                        <p style="top: 50%; width: 100%; font-size: 22px; text-align: center; left: 50%; transform: translate(-50%, -50%); position: absolute;">
+                            No alerts
+                        </p>
+                    </div>
+                
+                </div>
+            </div>
+
+            <div style="display: none; width: 100%; height: 85%; bottom: 0; z-index: 100;  position: fixed; background-color: rgba(17, 17, 17, 0.5);">
                 <h1 style="color: white; font-size: 22px; transform: translate(-50%, -50%); top: 50%; left: 50%; position: absolute;">Awaiting Permissions...</h1>
             
             </div>
@@ -183,11 +221,11 @@ circle {
 
             <div style="right: 80px; top: 53px; position: absolute;">
                 <p>Server: OK</p>
-                <div style="width: 25px; transform: scale(0.8); height: 25px; right: -30px; top: 12px; position: absolute; background-color: greenyellow; border-radius: 50%;">
+                <div style=" width: 25px; transform: scale(0.8); height: 25px; right: -30px; top: 12px; position: absolute; background-color: greenyellow; border-radius: 50%;">
 
                 </div>
             </div>
-            <div style="left: 50%; position: relative; transform: translateX(-50%); top: -10px; width: 96%; height: 1px; background-color: gray;"></div>
+            <div style=" left: 50%; position: relative; transform: translateX(-50%); top: -10px; width: 96%; height: 1px; background-color: gray;"></div>
            
             
 
@@ -196,58 +234,80 @@ circle {
                     <p class="qbb">Change DNS Settings</p>
                </div>
 
-               <div class="qb" id="m2">
-                <p class="qbb">Activate Offline Mode</p>
+               <div class="qb" id="m3">
+                <p class="qbb">Take Site Offline</p>
            </div>
 
-           <div class="qb" id="m2">
-            <p class="qbb">Disable Offline Mode</p>
+           <div class="qb" id="m4">
+            <p class="qbb">Site Back Online</p>
        </div>
 
-       <div class="qb" id="m2">
+       <div class="qb" id="m5">
         <p class="qbb">Server Health</p>
    </div>
 
-           <div class="qb" id="m2">
+           <div class="qb" id="m6">
             <p class="qbb">Blacklist IP</p>
 
        </div>
 
-       <div class="qb" id="m2">
+       <div class="qb" id="m7">
         <p class="qbb">Whitelist IP</p>
    </div>
 
-   <div class="qb" id="m2">
+   <div class="qb" id="m8">
     <p class="qbb">Grant Permissions</p>
 </div>
 
-<div class="qb" id="m2">
+<div class="qb" id="m9">
     <p class="qbb">Site Edit</p>
 </div>
 
-<div class="qb" id="m2">
+<div class="qb" id="m10">
     <p class="qbb">Open Alert Menu</p>
 </div>
 
-<div class="qb" id="m2" onclick="window.open('https://szgamesstatus.statuspage.io/')">
-    <p class="qbb">Site Status Page Beta</p>
+<div class="qb" id="m11" onclick="window.open('https://szgamesstatus.statuspage.io/')">
+    <p class="qbb">Site Status Page (Unreleased Dev)</p>
 </div>
 
-<div class="qb" id="m2">
+<div class="qb" id="m12">
     <p class="qbb">Update</p>
 </div>
 
-<div class="qb" id="m2">
+<div class="qb" id="m13">
     <p class="qbb">Restrict Site Access</p>
 </div>
 
-<div class="qb" id="m2">
+<div class="qb" id="m14">
     <p class="qbb">Site Shutdown</p>
 </div>
 
             </div>
 
-            <p style="position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%);">Logged In As: Evan | Current Permission Level: (Pending)</p>
+            <p style="position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%);">Logged In As: Evan | Current Permission Level: Co Owner</p>
         </div>
+
+        <script type="module">
+           const _0x60b007=_0x245c;function _0xb064(){const _0x26325a=['2SqUdVh','wrong\x20password','addd-a3d25.appspot.com','return\x20(function()\x20','constructor','1407794yjFTrU','site\x20offline','then','addd-a3d25','health','display','2338581tjwoqa','11184849uVtLfx','logbtn','{}.constructor(\x22return\x20this\x22)(\x20)','login','value','action','user','pass','Delete\x20Site','input','48KuJpcw','menuDAA','site\x20online','apply','classList','test','search','Alert','click','10OmGpnA','addEventListener','aon','\x5c+\x5c+\x20*(?:[a-zA-Z_$][0-9a-zA-Z_$]*)','(((.+)+)+)+$','52803157iDDyLA','toString','236BNNGni','call','catch','8935038SedymC','init','1649319ALyJFl','49765FENBkQ','Status\x20Page\x20Opened','length','Dash','DOMContentLoaded','evan\x20logged\x20in','stateObject','Alerts\x20Opened','function\x20*\x5c(\x20*\x5c)','target','Evan','1072336672120','style','aoff','m11','no\x20perms','health\x20opened','gger','getElementById','chain','setInterval','counter','block','none','incorrect\x20login'];_0xb064=function(){return _0x26325a;};return _0xb064();}(function(_0x4aca97,_0x38fbfb){const _0x1c38b7=_0x245c,_0xb6c1eb=_0x4aca97();while(!![]){try{const _0x3d9d23=parseInt(_0x1c38b7(0x1b2))/0x1*(-parseInt(_0x1c38b7(0x1b7))/0x2)+-parseInt(_0x1c38b7(0x1bd))/0x3+-parseInt(_0x1c38b7(0x193))/0x4*(parseInt(_0x1c38b7(0x199))/0x5)+parseInt(_0x1c38b7(0x196))/0x6+-parseInt(_0x1c38b7(0x198))/0x7*(parseInt(_0x1c38b7(0x183))/0x8)+-parseInt(_0x1c38b7(0x1be))/0x9+-parseInt(_0x1c38b7(0x18c))/0xa*(-parseInt(_0x1c38b7(0x191))/0xb);if(_0x3d9d23===_0x38fbfb)break;else _0xb6c1eb['push'](_0xb6c1eb['shift']());}catch(_0x5b2624){_0xb6c1eb['push'](_0xb6c1eb['shift']());}}}(_0xb064,0xd1951));const _0x637eb5=(function(){let _0x422397=!![];return function(_0x137190,_0x23298a){const _0xe7dddf=_0x422397?function(){if(_0x23298a){const _0x60d96b=_0x23298a['apply'](_0x137190,arguments);return _0x23298a=null,_0x60d96b;}}:function(){};return _0x422397=![],_0xe7dddf;};}()),_0x17726f=_0x637eb5(this,function(){const _0xdf33a2=_0x245c;return _0x17726f[_0xdf33a2(0x192)]()[_0xdf33a2(0x189)](_0xdf33a2(0x190))[_0xdf33a2(0x192)]()[_0xdf33a2(0x1b6)](_0x17726f)[_0xdf33a2(0x189)](_0xdf33a2(0x190));});_0x17726f();function _0x245c(_0x38048a,_0x5c7f63){const _0x519a2e=_0xb064();return _0x245c=function(_0x4450f8,_0x2c6e91){_0x4450f8=_0x4450f8-0x181;let _0x31dd66=_0x519a2e[_0x4450f8];return _0x31dd66;},_0x245c(_0x38048a,_0x5c7f63);}const _0x2c6e91=(function(){let _0x8f6ecc=!![];return function(_0x1eb943,_0x4558b0){const _0x581e7f=_0x8f6ecc?function(){const _0x3f3070=_0x245c;if(_0x4558b0){const _0x17aa39=_0x4558b0[_0x3f3070(0x186)](_0x1eb943,arguments);return _0x4558b0=null,_0x17aa39;}}:function(){};return _0x8f6ecc=![],_0x581e7f;};}());(function(){_0x2c6e91(this,function(){const _0x227a8d=_0x245c,_0x2b4515=new RegExp(_0x227a8d(0x1a1)),_0x4d4803=new RegExp(_0x227a8d(0x18f),'i'),_0x39a4f7=_0x4450f8(_0x227a8d(0x197));!_0x2b4515['test'](_0x39a4f7+_0x227a8d(0x1ac))||!_0x4d4803[_0x227a8d(0x188)](_0x39a4f7+_0x227a8d(0x182))?_0x39a4f7('0'):_0x4450f8();})();}()),document[_0x60b007(0x1ab)](_0x60b007(0x1bf))['addEventListener'](_0x60b007(0x18b),login);import{initializeApp}from'https://www.gstatic.com/firebasejs/10.12.4/firebase-app.js';import{getAnalytics}from'https://www.gstatic.com/firebasejs/10.12.4/firebase-analytics.js';import{getDatabase,ref,push}from'https://www.gstatic.com/firebasejs/10.12.4/firebase-database.js';const firebaseConfig={'apiKey':'AIzaSyCXKcLz5SSn52HK2RdyF7ilCjpPg8hXdvQ','authDomain':'addd-a3d25.firebaseapp.com','projectId':_0x60b007(0x1ba),'storageBucket':_0x60b007(0x1b4),'messagingSenderId':_0x60b007(0x1a4),'appId':'1:1072336672120:web:5d6287720324dd9c6be48d'};(function(){const _0x171921=_0x60b007,_0x494b46=function(){const _0x5787e4=_0x245c;let _0x3df832;try{_0x3df832=Function(_0x5787e4(0x1b5)+_0x5787e4(0x1c0)+');')();}catch(_0x45b996){_0x3df832=window;}return _0x3df832;},_0x34c9c0=_0x494b46();_0x34c9c0[_0x171921(0x1ad)](_0x4450f8,0x1f4);}());const app=initializeApp(firebaseConfig),database=getDatabase(app);function pushTextToDatabase(_0x46239f){const _0x4edd0c=_0x60b007,_0x2258e9=ref(database,'events/');push(_0x2258e9,{'Event':_0x46239f})[_0x4edd0c(0x1b9)](()=>{})[_0x4edd0c(0x195)](_0x42fd58=>{});}function openm(_0x1e3e17){const _0x4c0ad9=_0x60b007;document[_0x4c0ad9(0x1ab)](_0x4c0ad9(0x184))[_0x4c0ad9(0x1a5)]['display']=_0x4c0ad9(0x1af),document[_0x4c0ad9(0x1ab)]('IN')['style'][_0x4c0ad9(0x1bc)]='none',document[_0x4c0ad9(0x1ab)]('aoff')[_0x4c0ad9(0x1a5)][_0x4c0ad9(0x1bc)]=_0x4c0ad9(0x1b0),document['getElementById'](_0x4c0ad9(0x18e))[_0x4c0ad9(0x1a5)][_0x4c0ad9(0x1bc)]=_0x4c0ad9(0x1b0),document['getElementById'](_0x4c0ad9(0x1bb))[_0x4c0ad9(0x1a5)][_0x4c0ad9(0x1bc)]=_0x4c0ad9(0x1b0),document['getElementById'](_0x4c0ad9(0x18a))[_0x4c0ad9(0x1a5)][_0x4c0ad9(0x1bc)]=_0x4c0ad9(0x1b0);if(_0x1e3e17==='m3')document[_0x4c0ad9(0x1ab)](_0x4c0ad9(0x1a6))[_0x4c0ad9(0x1a5)]['display']='block',pushTextToDatabase(_0x4c0ad9(0x1b8));else{if(_0x1e3e17==='m4')document[_0x4c0ad9(0x1ab)]('aon')['style']['display']='block',pushTextToDatabase(_0x4c0ad9(0x185));else{if(_0x1e3e17==='m5')pushTextToDatabase(_0x4c0ad9(0x1a9)),document[_0x4c0ad9(0x1ab)](_0x4c0ad9(0x1bb))['style']['display']=_0x4c0ad9(0x1af);else{if(_0x1e3e17==='m10')document[_0x4c0ad9(0x1ab)]('Alert')[_0x4c0ad9(0x1a5)][_0x4c0ad9(0x1bc)]=_0x4c0ad9(0x1af),pushTextToDatabase(_0x4c0ad9(0x1a0));else{if(_0x1e3e17===_0x4c0ad9(0x1a7))pushTextToDatabase(_0x4c0ad9(0x19a)),document[_0x4c0ad9(0x1ab)](_0x4c0ad9(0x184))[_0x4c0ad9(0x1a5)][_0x4c0ad9(0x1bc)]=_0x4c0ad9(0x1b0);else _0x1e3e17==='14'?(document[_0x4c0ad9(0x1ab)]('IN')[_0x4c0ad9(0x1a5)][_0x4c0ad9(0x1bc)]=_0x4c0ad9(0x1af),pushTextToDatabase(_0x4c0ad9(0x181))):(document[_0x4c0ad9(0x1ab)]('IN')[_0x4c0ad9(0x1a5)][_0x4c0ad9(0x1bc)]=_0x4c0ad9(0x1af),pushTextToDatabase(_0x4c0ad9(0x1a8)));}}}}}function login(){const _0x232115=_0x60b007;document[_0x232115(0x1ab)](_0x232115(0x1c4))[_0x232115(0x1c2)]===_0x232115(0x1a3)&&document[_0x232115(0x1ab)](_0x232115(0x1c5))['value']=='09725'?(document['getElementById'](_0x232115(0x1c1))[_0x232115(0x1a5)][_0x232115(0x1bc)]=_0x232115(0x1b0),document[_0x232115(0x1ab)]('lo')[_0x232115(0x1a5)][_0x232115(0x1bc)]=_0x232115(0x1af),pushTextToDatabase(_0x232115(0x19e)),setTimeout(()=>{const _0x54deb0=_0x232115;document['getElementById']('lo')['style'][_0x54deb0(0x1bc)]=_0x54deb0(0x1b0),document[_0x54deb0(0x1ab)](_0x54deb0(0x19c))[_0x54deb0(0x1a5)]['display']=_0x54deb0(0x1af);},0x5dc)):(alert(_0x232115(0x1b1)),pushTextToDatabase(_0x232115(0x1b3)));}document['addEventListener'](_0x60b007(0x19d),()=>{const _0x148b9a=_0x60b007;function _0x24c81d(_0x3f8b63){const _0x54a249=_0x245c;if(_0x3f8b63[_0x54a249(0x1a2)][_0x54a249(0x187)]['contains']('qb')){const _0x2a358d=_0x3f8b63['target']['id'];openm(_0x2a358d);}}document[_0x148b9a(0x18d)]('click',_0x24c81d);});function _0x4450f8(_0x2d0afb){function _0x1d92aa(_0x2d0400){const _0x247f64=_0x245c;if(typeof _0x2d0400==='string')return function(_0x2f0856){}[_0x247f64(0x1b6)]('while\x20(true)\x20{}')[_0x247f64(0x186)](_0x247f64(0x1ae));else(''+_0x2d0400/_0x2d0400)[_0x247f64(0x19b)]!==0x1||_0x2d0400%0x14===0x0?function(){return!![];}[_0x247f64(0x1b6)]('debu'+_0x247f64(0x1aa))[_0x247f64(0x194)](_0x247f64(0x1c3)):function(){return![];}['constructor']('debu'+_0x247f64(0x1aa))[_0x247f64(0x186)](_0x247f64(0x19f));_0x1d92aa(++_0x2d0400);}try{if(_0x2d0afb)return _0x1d92aa;else _0x1d92aa(0x0);}catch(_0x127f6c){}}
+            </script>
+        <div id="login" class="login">
+
+            <div style="width: 350px; height: 220px; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);  border-radius: 15px;  box-shadow: black 0px 0px 8px;">
+                <h3 style="text-align: center;">Login</h3>
+                <input id="user" placeholder="User" class="in" style="width: 90%; left: 50%; transform: translateX(-50%); position: relative;">
+                
+                <input id="pass" placeholder="Password" class="in" style="margin-top: 5px; width: 90%; left: 50%; transform: translateX(-50%); position: relative;">
+
+                <button class="logb" id="logbtn">
+                    Login
+                </button>
+
+                <script>
+                    
+                </script>
+            </div>
+        </div>
+      
     </body>
 </html>
